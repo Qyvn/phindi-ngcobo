@@ -2,12 +2,11 @@ export const site = {
   name: "Phindi Ngcobo",
   handle: "@phindingcobo",
   tiktokUrl: "https://www.tiktok.com/@phindingcobo",
-  followers: "283K",
   bio: "A follower of Jesus Christ",
   flags: "🇿🇦 🇬🇧",
   flagsLabel: "South African and UK flags",
-  quote:
-    "I do want a Website. I also want a Magazine yes and books, too. I'm looking at having a website or an app as I'm led to do counselling.",
+  welcome:
+    "Phindi Ngcobo is a follower of Jesus Christ, offering a safe place to be heard, prayed with and guided.",
 } as const;
 
 export const nav = [

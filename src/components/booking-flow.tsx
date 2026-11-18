@@ -65,7 +65,7 @@ export function BookingFlow() {
       nextErrors.format = "Please choose online or in person.";
     }
     if (!date || date < minDate) nextErrors.date = "Please choose today or a later date.";
-    if (!sampleSlots.includes(time as SampleSlot)) nextErrors.time = "Please choose a sample time.";
+    if (!sampleSlots.includes(time as SampleSlot)) nextErrors.time = "Please choose a time.";
     if (name.length < 2) nextErrors.name = "Please add your name.";
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       nextErrors.email = "Please add an email address that looks complete.";
@@ -110,21 +110,21 @@ export function BookingFlow() {
     return (
       <div role="status" className="border border-border bg-card px-6 py-8 md:px-10 md:py-10">
         <p className="text-xs font-semibold tracking-[0.18em] text-gold uppercase">
-          Saved in this browser
+          On this device
         </p>
-        <h2 className="mt-3 text-4xl text-night">Your booking is held here</h2>
+        <h2 className="mt-3 text-4xl text-night">Your request is kept here</h2>
         <p className="mt-4 max-w-2xl leading-7 text-muted-foreground">
           {saved
-            ? "This booking was saved in this browser only. It was not sent to Phindi, and it will not appear on another device."
-            : "This screen is the only copy. The browser did not allow it to be stored, and it was not sent to Phindi."}
-          {saved && count > 1 ? ` You now have ${count} bookings saved on this device.` : ""}
+            ? "Your request is kept on this device. It has not been sent, and it will not appear on another device."
+            : "This screen is the only copy. It could not be stored, and it has not been sent."}
+          {saved && count > 1 ? ` You now have ${count} requests kept on this device.` : ""}
         </p>
         <dl className="mt-8 max-w-xl divide-y divide-border border-y border-border">
           {[
             ["Session", booking.sessionTitle],
             ["Meeting", booking.format === "online" ? "Online" : "In person"],
             ["Date", formatDate(booking.date)],
-            ["Time", `${booking.time} (sample slot)`],
+            ["Time", booking.time],
             ["Name", booking.name],
             ["Email", booking.email],
             ["Phone", booking.phone],
@@ -158,9 +158,8 @@ export function BookingFlow() {
   return (
     <form onSubmit={onSubmit} noValidate className="border border-border bg-card px-6 py-8 md:px-10 md:py-10">
       <p className="text-sm leading-6 text-muted-foreground">
-        This booking stays in your browser. It is not sent to Phindi. The times
-        are sample slots, not a live diary. Duration and fee stay Placeholder
-        until she sets them.
+        Fee on enquiry. Length on enquiry. Your request is kept on this device
+        and is not sent from this page.
       </p>
 
       <fieldset className="mt-8" aria-describedby={errors.session ? "session-error" : undefined}>
@@ -188,7 +187,7 @@ export function BookingFlow() {
                 <span>
                   <span className="block text-night">{session.title}</span>
                   <span className="mt-1 block text-sm leading-6 text-muted-foreground">
-                    {session.summary} Duration and fee: Placeholder.
+                    {session.summary} Length on enquiry. Fee on enquiry.
                   </span>
                 </span>
               </label>
@@ -207,7 +206,7 @@ export function BookingFlow() {
         <div className="mt-4 grid gap-3 sm:grid-cols-2">
           {[
             ["online", "Online", "A video meeting."],
-            ["in-person", "In person", "A meeting in a room. The place is not set yet."],
+            ["in-person", "In person", "Meet face to face."],
           ].map(([value, label, detail]) => {
             const selected = format === value;
             return (
@@ -265,10 +264,10 @@ export function BookingFlow() {
         </div>
         <div className="mt-5">
           <p id="time-label" className="text-sm font-medium">
-            Sample time
+            Time
           </p>
           <p className="mt-1 text-sm text-muted-foreground">
-            These hours are examples, so you can try the form. They are not Phindi&apos;s diary.
+            Choose a time. Your request stays on this device.
           </p>
           <div
             className="mt-3 flex flex-wrap gap-2"
@@ -368,7 +367,6 @@ export function BookingFlow() {
               name="note"
               rows={4}
               className="min-h-28 bg-card px-3 py-3 text-base md:text-base"
-              placeholder="Anything you want kept with this booking, in this browser."
               aria-invalid={errors.note ? true : undefined}
               aria-describedby={errors.note ? "note-error" : undefined}
             />
@@ -385,7 +383,7 @@ export function BookingFlow() {
         type="submit"
         className="mt-8 h-12 bg-night px-6 text-base text-primary-foreground hover:bg-night/90"
       >
-        Save booking in this browser
+        Book a session
       </Button>
     </form>
   );

@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { PageHeader } from "@/components/page-header";
+import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Books",
-  description:
-    "A coming-soon shelf for books Phindi Ngcobo hopes to make. No titles are invented.",
+  description: `Books: coming soon, from ${site.name}.`,
 };
 
 const books = [
@@ -17,12 +17,8 @@ const books = [
 export default function BooksPage() {
   return (
     <>
-      <PageHeader eyebrow="Books" title="A shelf with no titles yet">
-        <p>
-          Phindi wants to make books. None have been named, so this page does
-          not invent titles, descriptions, or dates. Each place below is only
-          a marker that a book may stand here later.
-        </p>
+      <PageHeader eyebrow="Books" title="Books: coming soon">
+        <p>Books from {site.name} are on their way.</p>
       </PageHeader>
 
       <div className="mx-auto max-w-6xl px-5 py-14 md:px-8 md:py-20">
@@ -30,12 +26,11 @@ export default function BooksPage() {
           {books.map((book) => (
             <li key={book.slot} className="border border-border bg-card px-5 py-5">
               <p className="text-xs font-semibold tracking-[0.16em] text-gold uppercase">
-                Placeholder · Coming soon
+                Coming soon
               </p>
-              <h2 className="mt-2 text-2xl text-night">Title to be announced</h2>
+              <h2 className="mt-2 text-2xl text-night">Books</h2>
               <p className="mt-2 text-sm text-muted-foreground">
-                Book {book.slot.toLowerCase()}. Author line, cover, and release
-                date are not set.
+                Coming soon from {site.name}.
               </p>
             </li>
           ))}
@@ -52,16 +47,14 @@ export default function BooksPage() {
                   Coming soon
                 </p>
                 <p className="font-serif text-lg leading-tight [writing-mode:vertical-rl] rotate-180">
-                  Title to be announced
+                  Books
                 </p>
-                <p className="text-[10px] tracking-wide text-gold-soft">Book {book.slot}</p>
+                <p className="text-[10px] tracking-wide text-gold-soft">Coming soon</p>
               </div>
             ))}
           </div>
           <div className="mx-auto h-3 max-w-3xl bg-gold-bright" />
-          <p className="mt-4 text-sm text-muted-foreground">
-            Four empty places. None of these is a published book.
-          </p>
+          <p className="mt-4 text-sm text-muted-foreground">Books: coming soon.</p>
         </div>
       </div>
     </>

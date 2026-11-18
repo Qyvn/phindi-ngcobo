@@ -37,7 +37,7 @@ export function EnquiryForm() {
       nextErrors.message = "Please write at least a short sentence.";
     }
     if (!understand) {
-      nextErrors.understand = "Please confirm that you know this is only a preview.";
+      nextErrors.understand = "Please confirm that this note stays on this device.";
     }
 
     setErrors(nextErrors);
@@ -64,13 +64,12 @@ export function EnquiryForm() {
         className="border border-border bg-card px-6 py-8 md:px-8"
       >
         <p className="text-xs font-semibold tracking-[0.18em] text-gold uppercase">
-          Preview only
+          On this device
         </p>
-        <h2 className="mt-3 text-3xl text-night">Nothing was saved or sent</h2>
+        <h2 className="mt-3 text-3xl text-night">Your note stays here</h2>
         <p className="mt-4 leading-7 text-muted-foreground">
-          This note stayed in your browser for a moment and was not saved. No
-          session is booked, and Phindi cannot see what you wrote. When a real
-          booking service is connected, this page will say so.
+          It has not been sent, and no session is booked. If you need help in
+          an emergency, contact your local emergency services.
         </p>
         <Button
           type="button"
@@ -90,11 +89,11 @@ export function EnquiryForm() {
       noValidate
       className="scroll-mt-28 border border-border bg-card px-6 py-8 md:px-8"
     >
-      <h2 className="text-3xl text-night">A question, not a booking</h2>
+      <h2 className="text-3xl text-night">Ask about a session</h2>
       <p className="mt-3 text-sm leading-6 text-muted-foreground">
-        To book a session, use Book this session on a card. This note is not
-        saved and is not sent. If you need urgent help, contact local emergency
-        services.
+        To book, choose Book a session. A note here stays on this device and is
+        not sent. If you need help in an emergency, contact your local
+        emergency services.
       </p>
 
       <div className="mt-6 space-y-5">
@@ -140,7 +139,6 @@ export function EnquiryForm() {
             name="message"
             rows={6}
             className="min-h-36 bg-card px-3 py-3 text-base md:text-base"
-            placeholder="A question about counselling. Write only what you are comfortable leaving in this browser."
             aria-invalid={errors.message ? true : undefined}
             aria-describedby={errors.message ? "message-error" : undefined}
           />
@@ -163,7 +161,7 @@ export function EnquiryForm() {
               aria-describedby={errors.understand ? "understand-error" : undefined}
             />
             <span>
-              I understand this does not book a session or send my note anywhere.
+              I understand this note stays on this device and does not book a session.
             </span>
           </label>
           {errors.understand ? (
@@ -178,7 +176,7 @@ export function EnquiryForm() {
         type="submit"
         className="mt-6 h-12 w-full bg-night px-6 text-base text-primary-foreground hover:bg-night/90 sm:w-auto"
       >
-        Submit enquiry
+        Leave a note
       </Button>
     </form>
   );

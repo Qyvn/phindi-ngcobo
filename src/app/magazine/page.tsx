@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { PageHeader } from "@/components/page-header";
 import { SignupForm } from "@/components/signup-form";
+import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Magazine",
-  description:
-    "A coming-soon shelf for a magazine Phindi Ngcobo wants to make. No issue titles are announced. The sign-up does not store email addresses.",
+  title: "The Magazine",
+  description: `The Magazine: coming soon, from ${site.name}.`,
 };
 
 const issues = ["01", "02", "03", "04"];
@@ -13,11 +13,10 @@ const issues = ["01", "02", "03", "04"];
 export default function MagazinePage() {
   return (
     <>
-      <PageHeader eyebrow="Magazine" title="Issues, when she is ready">
+      <PageHeader eyebrow="The Magazine" title="The Magazine: coming soon">
         <p>
-          Phindi has said she wants a magazine. No issue has been announced.
-          The grid below is a shelf for what is coming. The numbers are empty
-          slots, not the names of real editions.
+          A magazine from {site.name} is on its way. Leave your email if you
+          would like to hear when the first issue is ready.
         </p>
       </PageHeader>
 
@@ -29,9 +28,9 @@ export default function MagazinePage() {
                 Coming soon
               </p>
               <p className="mt-6 font-serif text-5xl text-night">Issue {number}</p>
-              <h2 className="mt-4 text-2xl text-night">Title to be announced</h2>
+              <h2 className="mt-4 text-2xl text-night">The Magazine</h2>
               <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                Cover, theme, and date will be added when Phindi chooses them.
+                Coming soon from {site.name}.
               </p>
             </li>
           ))}

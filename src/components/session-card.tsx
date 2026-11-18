@@ -11,15 +11,15 @@ export function SessionCard({ session }: { session: Session }) {
       <dl className="mt-6 grid grid-cols-2 gap-4 border-t border-border pt-4">
         <div>
           <dt className="text-xs font-semibold tracking-[0.16em] text-gold uppercase">
-            Duration
+            Length
           </dt>
-          <dd className="mt-1 text-night">Placeholder</dd>
+          <dd className="mt-1 text-night">On enquiry</dd>
         </div>
         <div>
           <dt className="text-xs font-semibold tracking-[0.16em] text-gold uppercase">
             Fee
           </dt>
-          <dd className="mt-1 text-night">Placeholder</dd>
+          <dd className="mt-1 text-night">Fee on enquiry</dd>
         </div>
       </dl>
       <Link

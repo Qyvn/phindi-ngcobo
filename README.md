@@ -1,8 +1,10 @@
 # Phindi Ngcobo
 
-A simple, quiet website for Phindi Ngcobo, Christian content creator on TikTok ([@phindingcobo](https://www.tiktok.com/@phindingcobo)). It introduces her in her own words, offers counselling sessions with a browser-only booking, and leaves room for a magazine and books that do not have titles yet.
+A ministry and counselling website for Phindi Ngcobo, a follower of Jesus Christ. It offers faith-centred counselling for individuals, couples and families, with a booking kept on the device, and pages for a magazine and books that are coming soon.
 
-Biography, qualifications, session length, fees, and contact details that were not provided are marked **Placeholder**. A booking is saved in this browser with `localStorage`. The enquiry and magazine sign-up are not sent, and they are not stored.
+TikTok: [@phindingcobo](https://www.tiktok.com/@phindingcobo).
+
+Session length and the fee are given on enquiry. A booking is saved in this browser with `localStorage`. It is not sent. The note form and the magazine email are not stored.
 
 ## Run locally
 

@@ -1,37 +1,19 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { CtaLink } from "@/components/cta-link";
 import { PageHeader } from "@/components/page-header";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description:
-    "Contact Phindi Ngcobo on TikTok at @phindingcobo. Email, phone, and a studio address are not published on this site.",
+  description: `Find ${site.name} on TikTok at ${site.handle}, or book a session.`,
 };
-
-const unpublished = [
-  {
-    title: "Email",
-    body: "Placeholder. An email address has not been published here.",
-  },
-  {
-    title: "Phone",
-    body: "Placeholder. A phone number has not been published here.",
-  },
-  {
-    title: "Studio or office",
-    body: "Placeholder. A place to visit has not been published here.",
-  },
-];
 
 export default function ContactPage() {
   return (
     <>
-      <PageHeader eyebrow="Contact" title="Find her on TikTok">
+      <PageHeader eyebrow="Contact" title="Come and talk">
         <p>
-          The one published way to reach {site.name} from this site is her
-          TikTok. Other contact details are left blank on purpose.
+          Find {site.name} on TikTok, or book a session. {site.bio}.
         </p>
       </PageHeader>
 
@@ -42,8 +24,9 @@ export default function ContactPage() {
           </p>
           <h2 className="mt-3 text-4xl text-[#f6f1e8] md:text-5xl">{site.handle}</h2>
           <p className="mt-4 max-w-md leading-7">
-            {site.followers} followers. Her bio reads “{site.bio}”, shown with
-            the South African and UK flags {site.flags}.
+            {site.bio}{" "}
+            <span aria-hidden="true">{site.flags}</span>
+            <span className="sr-only">{site.flagsLabel}</span>
           </p>
           <a
             href={site.tiktokUrl}
@@ -58,28 +41,17 @@ export default function ContactPage() {
           </div>
         </section>
 
-        <div>
-          <ul className="space-y-4">
-            {unpublished.map((item) => (
-              <li key={item.title} className="border border-border bg-card px-5 py-5">
-                <p className="text-xs font-semibold tracking-[0.16em] text-gold uppercase">
-                  Placeholder
-                </p>
-                <h2 className="mt-2 text-2xl text-night">{item.title}</h2>
-                <p className="mt-2 leading-7 text-muted-foreground">{item.body}</p>
-              </li>
-            ))}
-          </ul>
-          <p className="mt-8 leading-7 text-muted-foreground">
-            A session can be booked from the{" "}
-            <Link
-              href="/counselling"
-              className="text-night underline decoration-gold-bright underline-offset-4"
-            >
-              counselling page
-            </Link>
-            . That booking is saved in this browser and is not sent.
+        <div className="flex flex-col justify-center border border-border bg-card px-6 py-8">
+          <h2 className="text-3xl text-night">Book a session</h2>
+          <p className="mt-3 leading-7 text-muted-foreground">
+            Faith-centred counselling for individuals, couples and families.
+            Fee on enquiry.
           </p>
+          <div className="mt-8">
+            <CtaLink href="/counselling/book" tone="night">
+              Book a session
+            </CtaLink>
+          </div>
         </div>
       </div>
     </>

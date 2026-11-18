@@ -26,17 +26,17 @@ export function SignupForm() {
   if (preview) {
     return (
       <div role="status" className="border border-border bg-card px-6 py-8">
-        <h2 className="text-3xl text-night">Not subscribed</h2>
+        <h2 className="text-3xl text-night">Thank you</h2>
         <p className="mt-3 leading-7 text-muted-foreground">
-          This address was not saved. There is no mailing list yet. When Phindi
-          opens one, the page will say so.
+          The Magazine is coming soon. This address stays on this page and has
+          not been added to a list.
         </p>
         <Button
           type="button"
           className="mt-6 h-12 bg-night px-6 text-base text-primary-foreground hover:bg-night/90"
           onClick={() => setPreview(false)}
         >
-          Try the placeholder again
+          Use another email
         </Button>
       </div>
     );
@@ -44,9 +44,9 @@ export function SignupForm() {
 
   return (
     <form onSubmit={onSubmit} noValidate className="border border-border bg-card px-6 py-8">
-      <h2 className="text-3xl text-night">Be told when an issue is real</h2>
+      <h2 className="text-3xl text-night">Hear when it is ready</h2>
       <p className="mt-3 text-sm leading-6 text-muted-foreground">
-        Sign-up is a placeholder. An address entered here is not stored and is
+        The Magazine: coming soon. An email left here stays on this page and is
         not added to a list.
       </p>
       <div className="mt-6 space-y-2">
@@ -70,7 +70,7 @@ export function SignupForm() {
         type="submit"
         className="mt-6 h-12 bg-night px-6 text-base text-primary-foreground hover:bg-night/90"
       >
-        Preview sign-up
+        Let me know
       </Button>
     </form>
   );

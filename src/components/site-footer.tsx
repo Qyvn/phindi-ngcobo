@@ -13,8 +13,7 @@ export function SiteFooter() {
             <span className="sr-only">{site.flagsLabel}</span>
           </p>
           <p className="mt-6 max-w-md text-sm leading-6 text-[#d9d0c2]">
-            Placeholders stay empty until Phindi writes them. A counselling
-            booking is saved only in this browser. Nothing on this site is sent.
+            Faith-centred counselling for individuals, couples and families.
           </p>
         </div>
         <div className="flex flex-col gap-8 sm:flex-row sm:justify-between">

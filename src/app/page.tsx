@@ -7,20 +7,20 @@ const paths = [
   {
     href: "/counselling",
     title: "Counselling",
-    text: "Four sessions to choose from. Duration and fee are still placeholders, and a booking stays in your browser.",
-    action: "Look at counselling",
+    text: "Faith-centred counselling for individuals, couples and families.",
+    action: "Book a session",
   },
   {
     href: "/magazine",
-    title: "Magazine",
-    text: "She has said yes to a magazine. No issue has a title, a date, or a cover yet.",
-    action: "Look at the magazine",
+    title: "The Magazine",
+    text: "The Magazine: coming soon.",
+    action: "See the magazine",
   },
   {
     href: "/books",
     title: "Books",
-    text: "Books are part of what she hopes to make. No title is named here until she names it.",
-    action: "Look at the books",
+    text: "Books: coming soon.",
+    action: "See the books",
   },
 ] as const;
 
@@ -31,7 +31,7 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-6xl items-stretch gap-10 px-5 py-14 md:px-8 md:py-20 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
           <div className="flex flex-col justify-center">
             <p className="text-xs font-semibold tracking-[0.2em] text-gold uppercase">
-              Christian content creator
+              Faith-centred counselling
             </p>
             <h1 className="mt-4 text-5xl leading-[1.02] text-night text-balance md:text-7xl">
               {site.name}
@@ -39,20 +39,15 @@ export default function HomePage() {
             <p className="mt-5 text-lg text-foreground">
               {site.bio}{" "}
               <span aria-hidden="true">{site.flags}</span>
-              <span className="sr-only">{site.flagsLabel}, as shown on her TikTok bio</span>
-            </p>
-            <p className="mt-2 text-sm text-muted-foreground">
-              {site.followers} followers on TikTok · {site.handle}
+              <span className="sr-only">{site.flagsLabel}</span>
             </p>
             <p className="mt-6 max-w-xl text-lg leading-8 text-muted-foreground">
-              She shares that faith in public, and she feels led toward something
-              quieter: counselling. She wants a website for it, a magazine, and
-              books as well. This is a simple beginning, warm and unhurried, and
-              plain about what is not ready yet.
+              {site.welcome} Faith-centred counselling for individuals, couples
+              and families.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <CtaLink href="/counselling#sessions" tone="gold">
-                Book counselling
+              <CtaLink href="/counselling/book" tone="gold">
+                Book a session
               </CtaLink>
               <CtaLink href={site.tiktokUrl} tone="outline" external>
                 Visit TikTok
@@ -66,7 +61,8 @@ export default function HomePage() {
             </p>
             <blockquote className="mt-2">
               <p className="font-serif text-2xl leading-snug text-[#f7f1e6] md:text-[1.7rem]">
-                {site.quote}
+                I am a follower of Jesus Christ. You are welcome here, to be
+                heard, prayed with and guided.
               </p>
             </blockquote>
             <p className="mt-6 text-sm tracking-wide text-gold-soft">{site.name}</p>
@@ -81,12 +77,11 @@ export default function HomePage() {
               Sessions
             </p>
             <h2 className="mt-3 text-4xl leading-tight text-night md:text-5xl">
-              Book a conversation
+              Book a session
             </h2>
             <p className="mt-4 text-lg leading-8 text-muted-foreground">
-              Four ways to sit with her. Duration and fee are placeholders until
-              Phindi sets them. Choosing a session saves the booking in this
-              browser. It does not send it.
+              Faith-centred counselling for individuals, couples and families.
+              The fee is given on enquiry.
             </p>
           </div>
           <div className="mt-10">
@@ -98,10 +93,10 @@ export default function HomePage() {
       <section className="mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-24">
         <div className="max-w-2xl">
           <p className="text-xs font-semibold tracking-[0.2em] text-gold uppercase">
-            What she is making room for
+            Also here
           </p>
           <h2 className="mt-3 text-4xl leading-tight text-night md:text-5xl">
-            Counselling, a magazine, and books
+            The magazine and the books
           </h2>
         </div>
         <div className="mt-10 grid gap-5 md:grid-cols-3">
@@ -126,16 +121,11 @@ export default function HomePage() {
       <section className="border-t border-border bg-card">
         <div className="mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-20">
           <div className="max-w-2xl">
-            <h2 className="text-4xl text-night">Only what she has given</h2>
-            <p className="mt-4 text-lg leading-8 text-muted-foreground">
-              A biography, a qualification, or another way to reach her will
-              appear when Phindi has published it. Session length and fees stay
-              marked Placeholder. A booking is kept in this browser and is not
-              sent.
-            </p>
+            <h2 className="text-4xl text-night">You are welcome</h2>
+            <p className="mt-4 text-lg leading-8 text-muted-foreground">{site.welcome}</p>
             <div className="mt-8">
               <CtaLink href="/about" tone="outline">
-                Read the about page
+                About Phindi
               </CtaLink>
             </div>
           </div>

@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     default: site.name,
     template: `%s · ${site.name}`,
   },
-  description: `${site.name} is a Christian content creator. Her TikTok bio reads “${site.bio}”. She feels led to offer counselling, and she wants a website, a magazine, and books.`,
+  description: `${site.welcome} Faith-centred counselling for individuals, couples and families. Book a session.`,
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
